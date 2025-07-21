@@ -104,7 +104,7 @@ const Skills = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 px-4 relative">
+    <section ref={sectionRef} className="py-20 px-4 relative z-20">
       <div className="hidden sm:block">
         <Saturn />
       </div>
@@ -112,7 +112,7 @@ const Skills = () => {
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="bg-gray-900/90 backdrop-blur-sm border border-gray-700 rounded-xl p-6 inline-block shadow-2xl shadow-cyan-400/10">
+            <div className="bg-gray-900/90 border border-gray-700 rounded-xl p-6 inline-block shadow-2xl shadow-cyan-400/10">
               <div className="flex items-center space-x-3 mb-4">
                 <Settings className="text-cyan-400" size={28} />
                 <span className="text-gray-400 font-mono">$ ansible-playbook skills.yml</span>
@@ -126,50 +126,46 @@ const Skills = () => {
           {/* Skills Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6">
             {skills.map((skill, index) => (
-                              <div
-                  key={skill.name}
-                  className={`group bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-4 sm:p-6 hover:border-transparent transition-all duration-500 transform hover:scale-105 hover:shadow-2xl cursor-pointer ${isVisible ? 'animate-fade-in-up' : ''}`}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
+              <div
+                key={skill.name}
+                className={`relative group bg-gray-800/50 border border-gray-700 rounded-xl p-4 sm:p-6 hover:border-transparent transition-all duration-500 transform hover:scale-105 hover:shadow-2xl cursor-pointer z-10 ${isVisible ? 'animate-fade-in-up' : ''}`}
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 {/* Gradient Border on Hover */}
                 <div className={`absolute inset-0 rounded-xl bg-gradient-to-r ${skill.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm`}></div>
-                
                 <div className="relative z-10">
-                                      <div className="flex flex-col items-center space-y-3 sm:space-y-4">
-                      {/* Icon with Glow Effect */}
-                      <div className="relative">
-                        <skill.icon 
-                          className="text-gray-400 group-hover:text-white transition-all duration-300 drop-shadow-lg w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" 
-                          size={48} 
-                        />
-                        <div className={`absolute inset-0 bg-gradient-to-r ${skill.color} opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500`}></div>
-                      </div>
-                      
-                      {/* Skill Name */}
-                      <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text transition-all duration-300 text-center" 
-                          style={{ backgroundImage: `linear-gradient(to right, ${skill.color.split(' ')[1]}, ${skill.color.split(' ')[3]})` }}>
-                        {skill.name}
-                      </h3>
-                      
-                      {/* Description */}
-                      <p className="text-gray-400 text-xs sm:text-sm text-center group-hover:text-gray-300 transition-colors duration-300">
-                        {skill.description}
-                      </p>
-                      
-                      {/* Command */}
-                      <div className="bg-gray-900/80 rounded-lg p-2 sm:p-3 w-full">
-                        <code className="text-xs font-mono text-gray-400 group-hover:text-cyan-400 transition-colors duration-300 block text-center">
-                          {skill.command}
-                        </code>
-                      </div>
+                  <div className="flex flex-col items-center space-y-3 sm:space-y-4">
+                    {/* Icon with Glow Effect */}
+                    <div className="relative">
+                      <skill.icon 
+                        className="text-gray-400 group-hover:text-white transition-all duration-300 drop-shadow-lg w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" 
+                        size={48} 
+                      />
+                      <div className={`absolute inset-0 bg-gradient-to-r ${skill.color} opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500`}></div>
                     </div>
+                    {/* Skill Name */}
+                    <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text transition-all duration-300 text-center" 
+                        style={{ backgroundImage: `linear-gradient(to right, ${skill.color.split(' ')[1]}, ${skill.color.split(' ')[3]})` }}>
+                      {skill.name}
+                    </h3>
+                    {/* Description */}
+                    <p className="text-gray-400 text-xs sm:text-sm text-center group-hover:text-gray-300 transition-colors duration-300">
+                      {skill.description}
+                    </p>
+                    {/* Command */}
+                    <div className="bg-gray-900/80 rounded-lg p-2 sm:p-3 w-full">
+                      <code className="text-xs font-mono text-gray-400 group-hover:text-cyan-400 transition-colors duration-300 block text-center">
+                        {skill.command}
+                      </code>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
           
           {/* Terminal Output */}
-          <div className="mt-12 bg-gray-900/90 backdrop-blur-sm border border-gray-700 rounded-xl p-6 shadow-2xl shadow-cyan-400/10">
+          <div className="mt-12 bg-gray-900/90 border border-gray-700 rounded-xl p-6 shadow-2xl shadow-cyan-400/10">
             <div className="font-mono text-sm space-y-2">
               <div className="text-green-400">PLAY RECAP *********************************************************</div>
               <div className="text-gray-400">localhost : ok=8 changed=8 unreachable=0 failed=0 skipped=0</div>
