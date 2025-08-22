@@ -43,6 +43,26 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
+      name: 'DevSecOps MERN Stack Project on AWS EKS',
+      description: 'Production-grade MERN application deployed on AWS EKS with automated infrastructure, CI/CD, GitOps, and comprehensive security scanning',
+      icon: Server,
+      command: '$ deploy-devsecops-mern --cloud aws --orchestrator eks --iac terraform --cicd jenkins --gitops argocd',
+      color: 'from-red-400 to-orange-500',
+      details: 'Deployed and secured a production-grade MERN application on AWS EKS with automated infrastructure provisioning, CI/CD pipelines, GitOps deployment, and real-time monitoring. This comprehensive DevSecOps project showcases end-to-end automation from infrastructure as code to application deployment, incorporating security best practices throughout the entire pipeline. The project demonstrates advanced DevOps skills including multi-AZ Kubernetes orchestration, automated vulnerability scanning, and GitOps workflows for continuous delivery.',
+      technologies: ['AWS EKS', 'Terraform', 'Jenkins', 'ArgoCD', 'SonarQube', 'Trivy', 'React', 'Node.js', 'MongoDB', 'Prometheus', 'Grafana'],
+      preview: 'Production-grade MERN stack with DevSecOps practices on AWS EKS.',
+      highlights: [
+        'Automated multi-AZ AWS EKS infrastructure provisioning with Terraform',
+        'Built secure CI/CD pipelines with vulnerability scanning and ECR integration',
+        'Implemented GitOps workflows for continuous delivery of MERN stack',
+        'Enabled path-based routing with AWS ALB Controller',
+        'Achieved end-to-end monitoring with Prometheus & Grafana dashboards',
+        'Integrated comprehensive security scanning with SonarQube and Trivy'
+      ],
+      githubLink: 'https://github.com/Gaurav10111/End-to-End-Kubernetes-Three-Tier-DevSecOps-Project.git'
+    },
+    {
+      id: 2,
       name: 'CI/CD Pipeline: Jenkins + Ansible + Docker (From Scratch)',
       description: 'Complete CI/CD pipeline built from scratch using Dockerized Jenkins, Ansible automation, and custom private Docker registry',
       icon: Code,
@@ -62,7 +82,7 @@ const Projects = () => {
       githubLink: 'https://github.com/Gaurav10111/CI-CD-Pipeline-Jenkins-Ansible-Docker-from-scratch.git'
     },
     {
-      id: 2,
+      id: 3,
       name: 'WordPress on AWS using Terraform – Multi-Environment IaC',
       description: 'Production-ready WordPress infrastructure on AWS with Terraform automation',
       icon: Cloud,
@@ -82,7 +102,7 @@ const Projects = () => {
       githubLink: 'https://github.com/Gaurav10111/Terraform-AWS-Wordpress-RDS.git'
     },
     {
-      id: 3,
+      id: 4,
       name: 'DevOps CI/CD Workflow (Jenkins + Ansible + Docker + Kubernetes on RHEL 9 EC2)',
       description: 'Production-style CI/CD pipeline built from scratch using only open-source tools',
       icon: Server,
@@ -102,7 +122,7 @@ const Projects = () => {
       githubLink: 'https://github.com/Gaurav10111/Demonstrate-complete-CI-CD-Workflow.git'
     },
     {
-      id: 4,
+      id: 5,
       name: 'Ansible Master-Node Automation using Docker & Kubernetes',
       description: 'Complete Ansible Master-Node automation setup built from scratch using Docker and Kubernetes',
       icon: Monitor,
@@ -323,6 +343,7 @@ const Projects = () => {
           <div className="mt-12 bg-gray-900/90 backdrop-blur-sm border border-gray-700 rounded-xl p-6 shadow-2xl shadow-cyan-400/10">
             <div className="font-mono text-sm space-y-1">
               <div className="text-green-400">NAME                    READY   STATUS    RESTARTS   AGE</div>
+              <div className="text-gray-300">devsecops-mern          1/1     Running   0          35d</div>
               <div className="text-gray-300">ci-cd-pipeline          1/1     Running   0          30d</div>
               <div className="text-gray-300">terraform-wordpress     1/1     Running   0          25d</div>
               <div className="text-gray-300">devops-workflow         1/1     Running   0          20d</div>

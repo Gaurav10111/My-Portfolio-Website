@@ -88,18 +88,25 @@ const Skills = () => {
       description: 'Infrastructure as Code'
     },
     { 
-      name: 'AWS CLI', 
+      name: 'AWS', 
       icon: Shield, 
       command: '$ aws configure list', 
       color: 'from-yellow-400 to-orange-500',
       description: 'Cloud services & deployment'
     },
     { 
-      name: 'Monitoring', 
+      name: 'Prometheus', 
       icon: Monitor, 
-      command: '$ top', 
-      color: 'from-pink-400 to-rose-500',
-      description: 'System monitoring & observability'
+      command: '$ prometheus --version', 
+      color: 'from-red-400 to-orange-500',
+      description: 'Metrics collection & monitoring'
+    },
+    { 
+      name: 'Grafana', 
+      icon: Monitor, 
+      command: '$ grafana-server --version', 
+      color: 'from-orange-400 to-red-500',
+      description: 'Data visualization & dashboards'
     },
   ];
 

@@ -124,7 +124,7 @@ const Hero = () => {
               </div>
               
               <a 
-                href="https://drive.google.com/file/d/1YwfnFktCEcv0VH08iTiaG9BykIrQz-qV/view?usp=sharing" 
+                href="https://drive.google.com/file/d/1Ri5xdV97oYF5tobOoComKeGXu3BRynvv/view?usp=drive_link" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/30 flex items-center space-x-3 inline-block text-sm sm:text-base"
